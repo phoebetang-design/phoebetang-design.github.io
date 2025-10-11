@@ -731,21 +731,27 @@ img.grayscale {
 	/* Fade to color for Chrome and Safari */ -webkit-backface-visibility:hidden;
 	/* Fix for transition flickering */
 }
+/* reversed grayscale */
 img.grayscale:hover {
-	filter:none;
-	-webkit-filter:grayscale(0%);
-}
-.grayscale {
-	filter:none;
+	filter: grayscale(100%);
 	-webkit-filter:grayscale(100%);
 }
-.grayscale:hover {
-    filter: grayscale(0%);
-    -webkit-filter: grayscale(0%);
-}
+/* Grayscale effect now applied only to .portfolio-img, not the container */
 .grayscale .text-overlay .text {
-    color: inherit;
+	filter:none;
+	-webkit-filter:grayscale(0%);
+    color: #fab617;
     transition: color 0.2s ease;
+}
+/* Apply grayscale only to the image, not the text overlay */
+.grayscale .portfolio-img {
+    filter: none;
+    -webkit-filter: grayscale(0%);
+    transition: all .6s ease;
+}
+.grayscale:hover .portfolio-img {
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
 }
 
 .row-offset-0 {
